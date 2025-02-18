@@ -2,9 +2,9 @@ from flask import Flask, request, jsonify, render_template
 import joblib
 import numpy as np
 
-# Load the trained model and label encoder
-model = joblib.load("student_performance_model.pkl")
-label_encoder = joblib.load("label_encoder.pkl")
+# Load the trained model and label encoder from the models_data directory
+model = joblib.load("models_data/student_performance_model.pkl")
+label_encoder = joblib.load("models_data/label_encoder.pkl")
 
 app = Flask(__name__)
 
@@ -30,4 +30,4 @@ def predict():
         return jsonify({'error': str(e)})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
