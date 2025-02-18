@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, render_template
 import joblib
 import numpy as np
+import os  # Import os here, at the top
 
 # Load the trained model and label encoder from the models_data directory
 model = joblib.load("models_data/student_performance_model.pkl")
@@ -30,4 +31,5 @@ def predict():
         return jsonify({'error': str(e)})
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    port = int(os.environ.get("PORT", 5000))  # Moved here
+    app.run(debug=True, host="0.0.0.0", port=port)  # Keep this under the if __name__ block
