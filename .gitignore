@@ -1,0 +1,7 @@
+*.pkl
+*.csv
+__pycache__/
+midterm_env/
+models_data/
+
+

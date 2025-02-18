@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Performance Prediction</title>
+</head>
+<body>
+    <h2>Predict Student's Race/Ethnicity</h2>
+    <form action="/predict" method="post">
+        <label for="math_score">Math Score:</label>
+        <input type="number" name="math_score" required><br>
+
+        <label for="reading_score">Reading Score:</label>
+        <input type="number" name="reading_score" required><br>
+
+        <label for="writing_score">Writing Score:</label>
+        <input type="number" name="writing_score" required><br>
+
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>
